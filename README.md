@@ -42,4 +42,12 @@ The **Northwind database** is a well-known sample dataset that simulates a tradi
 
 ## 📁 Repository Sections
 
+### 📁 SQL Queries
+This section contains SQL queries used for data extraction, transformation, and analysis. These scripts are designed to explore the Northwind dataset and generate meaningful business insights.
+
+### 📄 Documentation
+The documentation offers detailed explanations of the data analysis process and showcases the insights we've uncovered. It includes query logic, visualizations, and interpretations of the results.
+
+### 📊 Data
+Access the dataset used for analysis, as well as any cleaned or transformed data, in this section. This includes the original Northwind schema and any modified versions used for reporting.
 
