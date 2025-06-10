@@ -50,4 +50,44 @@ The **Northwind database** is a well-known sample dataset that simulates a tradi
 
 - Data
     Access the dataset used for analysis, as well as any cleaned or transformed data, in this section. This includes the original Northwind schema and any modified versions used for reporting.
+## Example Queries
+--
+select * from Customers where Country ='USA' and City  in('Portland', 'Kirkland') order by CustomerName asc;
+![image](https://github.com/user-attachments/assets/eb891fa3-841b-4c62-b99b-a5eeab005826)
+
+select * from orders where customerID in(select Customerid from Customers where CustomerName like 'A%');
+![image](https://github.com/user-attachments/assets/a8ed95f4-b418-4473-8b36-53c6c14f1b86)
+
+select products.ProductName, suppliers.SupplierName from products
+inner join suppliers on products.SupplierID=suppliers.SupplierID
+where suppliers.SupplierName = "Tokyo Traders" Order by products.ProductName;
+![image](https://github.com/user-attachments/assets/b9368117-ac82-48eb-a6cb-7b5bfe02c906)
+
+SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Orders
+RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+ORDER BY Orders.OrderID;
+
+![image](https://github.com/user-attachments/assets/6217f712-e8d3-4be2-bbba-8a3d8f433fdb)
+
+
+SELECT 
+    Categories.CategoryName,
+    SUM(Order_Details.Quantity) AS TotalQuantitySold
+FROM 
+    Categories
+Inner JOIN 
+    Products ON Categories.CategoryID = Products.CategoryID
+Inner JOIN 
+    Order_Details ON Products.ProductID = Order_Details.ProductID
+GROUP BY 
+    Categories.CategoryName
+ORDER BY 
+    TotalQuantitySold DESC;
+
+![image](https://github.com/user-attachments/assets/1df0f110-c6cb-47b6-ade9-ad8a1a6efc82)
+
+
+
+
 
